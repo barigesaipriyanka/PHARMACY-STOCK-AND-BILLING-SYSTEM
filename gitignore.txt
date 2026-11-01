@@ -1,0 +1,41 @@
+# Compiled Java
+*.class
+out/
+bin/
+target/
+build/
+
+# Packages / archives
+*.jar
+*.war
+*.ear
+*.zip
+
+# Logs
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbproject/
+nbbuild/
+nbdist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+hs_err_pid*

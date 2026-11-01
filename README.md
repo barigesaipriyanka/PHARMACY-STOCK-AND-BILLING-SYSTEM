@@ -1,37 +1,37 @@
-# MediStock – Pharmacy Stock and Billing System
+# MediStock - Pharmacy Stock and Billing System
 
-A console-based Java application for managing pharmacy medicine stock and generating customer bills.
+A console-based Java application to manage pharmacy stock and generate customer bills.
+Uses only `java.util.Scanner` and `java.util.ArrayList` (no file storage; data lives in memory).
 
 ## Features
-- Add and display medicines
-- Search medicines by name or ID
-- Delete and restock medicines
-- Sell medicines and generate bills
-- Apply discounts and calculate 12% GST
-- View low-stock and near-expiry medicines
-- Calculate total stock value and daily sales
+- Add, display, search (by name / ID), delete medicines
+- Restock medicines
+- Sell medicine and generate bill with 12% GST (expired medicines are blocked)
+- Low stock (quantity <= 5) and near expiry (<= 3 months) reports
+- Total stock value and daily sales
 
-## Requirements
-- Java JDK 8 or later
-- Eclipse IDE (or any Java IDE)
+## OOP concepts used
+- Interface (`Billable`)
+- Inheritance (`PrescriptionMedicine` extends `Medicine`)
+- Method overloading (`calculateBill(qty)` / `calculateBill(qty, discount)`)
+- Method overriding (`PrescriptionMedicine.calculateBill`)
+- Encapsulation (private fields with getters/setters)
 
-## Run in Eclipse
-1. Extract or clone this repository.
-2. Open Eclipse.
-3. Select **File → Import → Existing Projects into Workspace**.
-4. Choose the extracted `MediStock-GitHub` folder.
-5. Open `src/Medistock/MediStock.java`.
-6. Right-click the file and select **Run As → Java Application**.
-
-## Run from a terminal
-From the project folder:
-
-```bash
-javac -d bin src/Medistock/MediStock.java
-java -cp bin Medistock.MediStock
+## Project structure
+```
+MediStock/
+├── .gitignore
+├── README.md
+└── src/
+    ├── Billable.java
+    ├── Medicine.java
+    ├── PrescriptionMedicine.java
+    └── MediStock.java
 ```
 
-## Notes
-- Medicine and sales data are stored in memory while the program is running.
-- Data is reset when the application is closed.
-- The package name is `Medistock` and the main class is `MediStock`.
+## How to run
+```bash
+javac -d out src/*.java
+java -cp out MediStock
+```
+Requires JDK 8 or higher.
